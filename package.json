@@ -1,0 +1,23 @@
+{
+  "name": "node-robinhood",
+  "version": "0.0.1",
+  "description": "Tool to crawl robinhood statistics data",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test"
+  },
+  "author": "Daniel Wang",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.5",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "url-join": "^4.0.0",
+    "urlencode": "^1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.4",
+    "should": "^13.2.1"
+  }
+}
