@@ -126,7 +126,7 @@ describe('Statistics Tests', function () {
       this.timeout(20000);
 
       symbols = _.map((await stat.getInstruments(most100)), 'symbol');
-      historical = await stat.getHistoricals(symbols, 'week');
+      historical = await stat.getHistoricalBySymbol(symbols, 'week');
     });
 
     it('should resolve to historical', function () {

@@ -7,6 +7,10 @@
     "test": "mocha ./test"
   },
   "author": "Daniel Wang",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielwpz/node-robinhood.git"
+  },
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",
