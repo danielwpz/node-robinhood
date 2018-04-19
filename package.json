@@ -1,6 +1,6 @@
 {
   "name": "node-robinhood",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tool to crawl robinhood statistics data",
   "main": "index.js",
   "scripts": {
