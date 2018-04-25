@@ -1,5 +1,5 @@
 'use strict';
 
-const stat = require('./lib/crawler/robinhood/stat');
+const libs = require('./lib/index');
 
-module.exports = stat;
+module.exports = libs;
