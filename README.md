@@ -12,10 +12,10 @@ Based on https://github.com/sanko/Robinhood
 ```
 const robinhood = require('node-robinhood');
 
-robinhood.getInstrumentBySymbol('FB')
+robinhood.instrument.getInstrumentBySymbol('FB')
   .then(console.log);
   
-robinhood.getQuoteBySymbol('BAC')
+robinhood.quote.getQuoteBySymbol('BAC')
   .then(console.log);
 ```
 
