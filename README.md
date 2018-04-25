@@ -25,20 +25,20 @@ robinhood.getQuoteBySymbol('BAC')
 `symbol` means a single instrument symbol (e.g. `FB`)*
 
 - `instrument`
-  - `getInstrument(id)`
+  - `getInstrument(id)`           
       &nbsp;&nbsp;*return*: An instrument object
     
-  - `getInstruments(id_list)`
-      &nbsp;&nbsp;*`id_list`* List of instrument ids
+  - `getInstruments(id_list)`            
+      &nbsp;&nbsp;*`id_list`* List of instrument ids          
       &nbsp;&nbsp;*return*: List of instrument objects
 
   - `getInstrumentBySymbol(symbol)`
 
 - `midlands`
-  - `getRatings(id)`
+  - `getRatings(id)`           
       &nbsp;&nbsp;*return*: Ratings object about instrument with id
 
-  - `get100MostPopular()`
+  - `get100MostPopular()`             
       &nbsp;&nbsp;*return*: A list of instrument ids under the 100 most popular tag
 
 - `quote`
@@ -50,5 +50,5 @@ robinhood.getQuoteBySymbol('BAC')
   - `getPopularities(id_list)`
 
 - `historical`
-  - `getHistoricalBySymbol(symbol_list, interval)`
-    &nbsp;&nbsp;*`interval` time interval, could be `week`, `day`...
+  - `getHistoricalBySymbol(symbol_list, interval)`           
+    &nbsp;&nbsp;*`interval`* time interval, could be `week`, `day`...
