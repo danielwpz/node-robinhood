@@ -170,6 +170,7 @@ describe('Statistics Tests', function () {
   function assertHistorical(h) {
     h.should.have.property('symbol');
     h.should.have.property('interval');
+    h.should.have.property('historicals');
     h.historicals.forEach(his => {
       his.should.have.property('open_price');
       his.should.have.property('close_price');
