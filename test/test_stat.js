@@ -1,6 +1,6 @@
 'use strict';
 
-const stat = require('../lib/crawler/robinhood/stat');
+const robinhood = require('../index');
 const _ = require('lodash');
 require('should');
 
@@ -8,7 +8,7 @@ describe('Statistics Tests', function () {
   let most100;
 
   before(async () => {
-    most100 = await stat.get100MostPopular();
+    most100 = await robinhood.midlands.get100MostPopular();
   });
 
 
@@ -22,7 +22,7 @@ describe('Statistics Tests', function () {
     let instrument;
 
     before(async () => {
-      instrument = await stat.getInstrument(_.first(most100));
+      instrument = await robinhood.instrument.getInstrument(_.first(most100));
     });
 
     it('should resolve to an instrument', function () {
@@ -34,7 +34,7 @@ describe('Statistics Tests', function () {
     let instruments;
 
     before(async () => {
-      instruments = await stat.getInstruments(most100.slice(0, 10));
+      instruments = await robinhood.instrument.getInstruments(most100.slice(0, 10));
     });
 
     it('should resolve to a list of instrument', function () {
@@ -46,7 +46,7 @@ describe('Statistics Tests', function () {
     let rating;
 
     before(async () => {
-      rating = await stat.getRatings(most100[2]);
+      rating = await robinhood.midlands.getRatings(most100[2]);
     });
 
     it('should resolve to rating', function () {
@@ -58,7 +58,7 @@ describe('Statistics Tests', function () {
     let quote;
 
     before(async () => {
-      quote = await stat.getQuote(_.last(most100));
+      quote = await robinhood.quote.getQuote(_.last(most100));
     });
 
     it('should resolve to quote', function () {
@@ -70,8 +70,8 @@ describe('Statistics Tests', function () {
     let quote;
 
     before(async () => {
-      const instrument = await stat.getInstrument(most100[2]);
-      quote = await stat.getQuoteBySymbol(instrument.symbol);
+      const instrument = await robinhood.instrument.getInstrument(most100[2]);
+      quote = await robinhood.quote.getQuoteBySymbol(instrument.symbol);
     });
 
     it('should also resolve to a quote', function () {
@@ -83,7 +83,7 @@ describe('Statistics Tests', function () {
     let popularity;
 
     before(async () => {
-      popularity = await stat.getPopularity(most100[3]);
+      popularity = await robinhood.popularity.getPopularity(most100[3]);
     });
 
     it('should resolve to popularity', function () {
@@ -95,7 +95,7 @@ describe('Statistics Tests', function () {
     let popularities;
 
     before(async () => {
-      popularities = await stat.getPopularities(most100.slice(10, 15));
+      popularities = await robinhood.popularity.getPopularities(most100.slice(10, 15));
     });
 
     it('should resolve to a list of popularity', function () {
@@ -108,8 +108,8 @@ describe('Statistics Tests', function () {
     let symbol;
 
     before(async () => {
-      symbol = (await stat.getInstrument(most100[3])).symbol;
-      instrument = await stat.getInstrumentBySymbol(symbol);
+      symbol = (await robinhood.instrument.getInstrument(most100[3])).symbol;
+      instrument = await robinhood.instrument.getInstrumentBySymbol(symbol);
     });
 
     it('should resolve to instrument', function () {
@@ -125,8 +125,8 @@ describe('Statistics Tests', function () {
     before(async function() {
       this.timeout(20000);
 
-      symbols = _.map((await stat.getInstruments(most100)), 'symbol');
-      historical = await stat.getHistoricalBySymbol(symbols, 'week');
+      symbols = _.map((await robinhood.instrument.getInstruments(most100)), 'symbol');
+      historical = await robinhood.historical.getHistoricalBySymbol(symbols, 'week');
     });
 
     it('should resolve to historical', function () {
